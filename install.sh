@@ -6,7 +6,7 @@ source funcs.sh
 DOTFILES_REPO_ROOT=$(pwd -P)
 cd "$HOME"
 
-FILES_TO_LINK=('.zshenv' '.zprofile')
+FILES_TO_LINK=('.zshenv' '.zshrc')
 
 main "Linking zsh files"
 
