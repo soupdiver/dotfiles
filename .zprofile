@@ -1,3 +1,11 @@
+# Save command history
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=2000
+SAVEHIST=1000
+
+# Default prompt
+PS1="%F{red}%n%f@%m %F{magenta}%1~%f %# "
+
 # Global aliases 
 alias ll='ls -lah'
 alias ...='cd ../..'
@@ -11,7 +19,7 @@ then
   alias t='terraform'
   alias k="kubectl"
   alias mbox='ssh felix@mailbox.rainbowfab.org'
-elif [ $(uname-s) = "FreeBSD" ]
+elif [ $(uname -s) = "FreeBSD" ]
 then
 fi
 
