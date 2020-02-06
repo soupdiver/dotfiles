@@ -55,15 +55,27 @@ alias ..='cd ..'
 if [ $(uname -s) = "Darwin" ]
 then
   alias hosts='code ~/.ssh/known_hosts'
-  alias ww='fork . && code .'
-  alias t='terraform'
-  alias k="kubectl"
   alias mbox='ssh felix@mailbox.rainbowfab.org'
+  
+  alias ww='fork . && code .'
+  
+  alias t='terraform'
+  alias kc="kubectl -n core"
+  alias ks="kubectl -n staging"
+  alias kp="kubectl -n production"
+  alias k="kubectl"
+  
 elif [ $(uname -s) = "FreeBSD" ]
 then
 fi
 
 # GCLOUD
+GCLOUD_PATH_INCLUDE="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+if [ -f "${GCLOUD_PATH_INCLUDE}" ]
+then
+  source "${GCLOUD_PATH_INCLUDE}"
+fi
+
 GCLOUD_COMPLETION_INCLUDE="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 if [ -f "${GCLOUD_COMPLETION_INCLUDE}" ]
 then
