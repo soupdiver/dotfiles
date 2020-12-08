@@ -22,12 +22,11 @@ HISTSIZE=2000
 SAVEHIST=1000
 setopt hist_ignore_all_dups
 
+# Style
 autoload -U compinit
 compinit
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-
-setopt correctall
 
 autoload -Uz vcs_info
 
