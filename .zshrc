@@ -1,8 +1,6 @@
 # Paths for macOS machines
-if [ $(uname -s) = "Darwin" ]
-then
-  if [ "$(uname -p)" = "arm" ]
-  then
+if [ $(uname -s) = "Darwin" ]; then
+  if [ "$(uname -p)" = "arm" ]; then
     export PATH="/opt/homebrew/bin:$PATH"
     alias ibrew='arch -x86_64 /usr/local/bin/brew'
     
@@ -26,8 +24,7 @@ then
   GCLOUD_COMPLETION_INCLUDE="$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
   if [ -f "${GCLOUD_COMPLETION_INCLUDE}" ]; then source "${GCLOUD_COMPLETION_INCLUDE}"; fi
 
-elif [ $(uname -s) = "FreeBSD" ]
-then
+elif [ $(uname -s) = "FreeBSD" ]; then
 fi
 
 # Global aliases
@@ -36,13 +33,11 @@ alias ...='cd ../..'
 alias ..='cd ..'
 
 # Golang
-if [ -n $GOPATH  ]
-then
+if [ -n $GOPATH  ]; then
   export PATH="$GOPATH/bin:$PATH"
 fi
 
-if [ -n $GOROOT ]
-then
+if [ -n $GOROOT ]; then
   export PATH="$GOROOT/bin:$PATH"
 fi
 
